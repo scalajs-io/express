@@ -1,6 +1,6 @@
-MongoDB API for Scala.js
+Express.js API for Scala.js
 ================================
-This is a Scala.js type-safe binding for [MongoDB](http://mongodb.github.io/node-mongodb-native/2.2/api/)
+This is a Scala.js type-safe binding for [Express.js v4.x](http://expressjs.com/en/4x/api.html)
 
 <a name="build_requirements"></a>
 #### Build Requirements
