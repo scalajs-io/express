@@ -23,13 +23,13 @@ val commonSettings = Seq(
   libraryDependencies ++= Seq(
     "org.scala-lang" % "scala-reflect" % scalaJsVersion,
     "org.scalatest" %%% "scalatest" % "3.0.1" % "test",
-    "io.scalajs" %%% "nodejs" % scalaJsIOVersion
+    "io.scalajs" %%% "nodejs" % "7.4.0"
   ))
 
 lazy val root = (project in file(".")).
   enablePlugins(ScalaJSPlugin).
-  aggregate(npm_cookie_parser, npm_express, npm_express_csv, npm_express_fileupload, npm_express_multer, npm_express_ws).
-  dependsOn(npm_cookie_parser, npm_express, npm_express_csv, npm_express_fileupload, npm_express_multer, npm_express_ws).
+  aggregate(npm_express, npm_express_csv, npm_express_fileupload, npm_express_multer, npm_express_ws).
+  dependsOn(npm_express, npm_express_csv, npm_express_fileupload, npm_express_multer, npm_express_ws).
   settings(commonSettings: _*).
   settings(
     name := "express-bundle",
@@ -40,18 +40,6 @@ lazy val root = (project in file(".")).
 /////////////////////////////////////////////////////////////////////////////////
 //      Express.js packages
 /////////////////////////////////////////////////////////////////////////////////
-
-lazy val npm_cookie_parser = (project in file("cookie-parser")).
-  dependsOn(npm_express).
-  enablePlugins(ScalaJSPlugin).
-  settings(commonSettings: _*).
-  settings(
-    name := "cookie-parser",
-    organization := "io.scalajs.npm",
-    description := "cookie-parser binding for Scala.js",
-    libraryDependencies ++= Seq(
-      "io.scalajs.npm" %%% "cookie" % scalaJsIOVersion
-    ))
 
 lazy val npm_express = (project in file("core")).
   enablePlugins(ScalaJSPlugin).

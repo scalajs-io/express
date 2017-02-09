@@ -8,8 +8,6 @@ The following npm packages have been bundle in this project.
 
 | Package               | Version | Artifact ID            | Description                                             | Status          |
 |-----------------------|---------|------------------------|---------------------------------------------------------|-----------------|
-| body-parser           | 1.15.1  | body-parser            | Body parsing middleware. | Stable |
-| cookie-parser         | 1.4.3   | cookie-parser          | Cookie parsing with signatures | Stable |
 | express               | 4.13.4  | express                | Fast, unopinionated, minimalist web framework for Node.js | Stable |
 | express-csv           | 0.6.0   | express-csv            | express-csv provides response csv easily to express. | Stable |
 | express-fileupload    | 0.0.5   | express-fileupload     | Simple express file upload middleware that wraps around connect-busboy | Stable |
