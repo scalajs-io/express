@@ -6,7 +6,7 @@ import sbt._
 
 import scala.language.postfixOps
 
-val apiVersion = "0.3.0.3"
+val apiVersion = "4.14.1"
 val scalaJsIOVersion = "0.3.0.3"
 val scalaJsVersion = "2.12.1"
 
@@ -28,8 +28,8 @@ val commonSettings = Seq(
 
 lazy val root = (project in file(".")).
   enablePlugins(ScalaJSPlugin).
-  aggregate(npm_body_parser, npm_cookie_parser, npm_express, npm_express_csv, npm_express_fileupload, npm_express_multer, npm_express_ws).
-  dependsOn(npm_body_parser, npm_cookie_parser, npm_express, npm_express_csv, npm_express_fileupload, npm_express_multer, npm_express_ws).
+  aggregate(npm_cookie_parser, npm_express, npm_express_csv, npm_express_fileupload, npm_express_multer, npm_express_ws).
+  dependsOn(npm_cookie_parser, npm_express, npm_express_csv, npm_express_fileupload, npm_express_multer, npm_express_ws).
   settings(commonSettings: _*).
   settings(
     name := "express-bundle",
@@ -40,16 +40,6 @@ lazy val root = (project in file(".")).
 /////////////////////////////////////////////////////////////////////////////////
 //      Express.js packages
 /////////////////////////////////////////////////////////////////////////////////
-
-lazy val npm_body_parser = (project in file("body-parser")).
-  dependsOn(npm_express).
-  enablePlugins(ScalaJSPlugin).
-  settings(commonSettings: _*).
-  settings(
-    name := "body-parser",
-    organization := "io.scalajs.npm",
-    description := "body-parser binding for Scala.js"
-  )
 
 lazy val npm_cookie_parser = (project in file("cookie-parser")).
   dependsOn(npm_express).

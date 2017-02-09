@@ -1,6 +1,6 @@
 {
-  "name": "scalajs-io",
-  "version": "7.4.0",
+  "name": "express-scalajs",
+  "version": "4.14.1",
   "private": true,
   "dependencies": {
     "body-parser": "^1.15.0",

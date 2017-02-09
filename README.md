@@ -44,10 +44,10 @@ $ sbt test
 
 #### Artifacts and Resolvers
 
-To add the `nodejs` binding to your project, add the following to your build.sbt:  
+To add the `express` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs" %%% "express-bundle" % "0.3.0.3"
+libraryDependencies += "io.scalajs" %%% "express" % "4.13.4"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:
