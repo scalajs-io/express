@@ -1,23 +1,23 @@
-Expressjs API for Scala.js
+Express API for Scala.js
 ================================
 This is a Scala.js type-safe binding for [Express.js v4.x](http://expressjs.com/en/4x/api.html)
 
 Express is a Fast, unopinionated, minimalist web framework.
 
-The following npm packages have been bundle in this project.
+The following npm packages are related to Express:
 
-| Package               | Version | Artifact ID            | Description                                             | Status          |
-|-----------------------|---------|------------------------|---------------------------------------------------------|-----------------|
-| express               | 4.13.4  | express                | Fast, unopinionated, minimalist web framework for Node.js | Stable |
-| express-csv           | 0.6.0   | express-csv            | express-csv provides response csv easily to express. | Stable |
-| express-fileupload    | 0.0.5   | express-fileupload     | Simple express file upload middleware that wraps around connect-busboy | Stable |
-| express-multer        | 1.1.0   | express-multer         | Multer is a node.js middleware for handling multipart/form-data. | Tesing required |
-| express-ws            |2.0.0-rc1| express-ws             | WebSocket endpoints for Express applications | Stable |
-
+| Package                                                               | Version | Description                                                |
+|-----------------------------------------------------------------------|---------|------------------------------------------------------------|
+| [body-parser](https://github.com/scalajs-io/body-parser)              | 1.16.0  | Body parsing middleware.                                   |
+| [cookie-parser](https://github.com/scalajs-io/cookie-parser)          | 1.4.3   | Cookie parsing with signatures                             |
+| [express-csv](https://github.com/scalajs-io/express-csv)              | 0.6.0   | express-csv provides response csv easily to express.       |
+| [express-fileupload](https://github.com/scalajs-io/express-fileupload)| 0.0.7   | Simple express file upload middleware that wraps around connect-busboy |
+| [express-ws](https://github.com/scalajs-io/express-ws)                | 2.0.0   | WebSocket endpoints for Express applications               |
+| [multer](https://github.com/scalajs-io/multer)                        | 1.3.0   | Multer is a node.js middleware for handling multipart/form-data. |
 
 #### Build Requirements
 
-* [ScalaJs.io v0.3.x](https://github.com/ldaniels528/scalajs.io)
+* [ScalaJs.io v0.3.x](https://github.com/scalajs-io/scalajs.io)
 * [SBT v0.13.13](http://www.scala-sbt.org/download.html)
 
 #### Build/publish the SDK locally
@@ -40,9 +40,39 @@ Then you can run the tests:
 $ sbt test
 ```
 
+#### Examples
+
+```scala
+import io.scalajs.nodejs.http.{Http, RequestOptions, ServerResponse}
+import io.scalajs.nodejs._
+import io.scalajs.npm.express._
+import scala.concurrent.duration._
+
+// create the Express application instance
+val app = Express()
+
+// define a port
+val port = 8080
+
+// setup the server with routes
+val server = app
+  .get("/", (_: Request, res: Response) => res.send("Hello GET"))
+  .post("/", (_: Request, res: Response) => res.send("Hello POST"))
+  .delete("/:id", (req: Request, res: Response) => res.send(s"Hello DELETE - ${req.params.get("id").orNull}"))
+  .get("/list_user", (_: Request, res: Response) => res.send("Page Listing"))
+  .get("/ab*de", (_: Request, res: Response) => res.send("Page Pattern Match"))
+  .listen(port)
+
+Http.get(s"http://localhost:$port/", { response: ServerResponse =>
+    response.onData { chunk =>
+      println(chunk.toString()) // Hello GET
+    }
+})
+```
+
 #### Artifacts and Resolvers
 
-To add the `express` binding to your project, add the following to your build.sbt:  
+To add the `Express` binding to your project, add the following to your build.sbt:  
 
 ```sbt
 libraryDependencies += "io.scalajs" %%% "express" % "4.13.4"

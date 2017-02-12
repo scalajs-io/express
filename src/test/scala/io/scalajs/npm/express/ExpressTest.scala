@@ -15,7 +15,7 @@ class ExpressTest extends FunSpec {
 
   describe("Express") {
 
-    // load the Express modules
+    // create the Express application instance
     val app = Express()
 
     // setup the server with routes
