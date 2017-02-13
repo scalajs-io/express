@@ -1,8 +1,13 @@
 Express API for Scala.js
 ================================
-This is a Scala.js type-safe binding for [Express.js v4.x](http://expressjs.com/en/4x/api.html)
+[Express.js v4.x](http://expressjs.com/en/4x/api.html) - Fast, unopinionated, minimalist web framework
 
-Express is a Fast, unopinionated, minimalist web framework.
+#### Description
+
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features 
+for web and mobile applications.
+
+#### Related Packages
 
 The following npm packages are related to Express:
 
@@ -75,7 +80,7 @@ Http.get(s"http://localhost:$port/", { response: ServerResponse =>
 To add the `Express` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs" %%% "express" % "4.13.4"
+libraryDependencies += "io.scalajs" %%% "express" % "4.14.1"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:

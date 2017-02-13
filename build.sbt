@@ -5,8 +5,8 @@ import sbt._
 
 import scala.language.postfixOps
 
-val apiVersion = "1.0.2"
-val scalaJsIOVersion = "0.3.0.3"
+val apiVersion = "4.14.1"
+val scalaJsIOVersion = "0.3.0.4-SNAPSHOT"
 val scalaJsVersion = "2.12.1"
 
 homepage := Some(url("https://github.com/scalajs.io/express"))
@@ -16,7 +16,7 @@ lazy val root = (project in file(".")).
   settings(
     name := "express",
     organization := "io.scalajs.npm",
-    description := "Express API bindings for Scala.js",
+    description := "Fast, unopinionated, minimalist web framework",
     version := apiVersion,
     scalaVersion := scalaJsVersion,
     scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature", "-language:implicitConversions", "-Xlint"),
