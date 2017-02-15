@@ -1,8 +1,8 @@
 Express API for Scala.js
 ================================
-[Express.js v4.x](http://expressjs.com/en/4x/api.html) - Fast, unopinionated, minimalist web framework
+[express](http://expressjs.com/en/4x/api.html) - Fast, unopinionated, minimalist web framework
 
-#### Description
+### Description
 
 Express is a minimal and flexible Node.js web application framework that provides a robust set of features 
 for web and mobile applications.
@@ -20,18 +20,18 @@ The following npm packages are related to Express:
 | [express-ws](https://github.com/scalajs-io/express-ws)                | 2.0.0   | WebSocket endpoints for Express applications               |
 | [multer](https://github.com/scalajs-io/multer)                        | 1.3.0   | Multer is a node.js middleware for handling multipart/form-data. |
 
-#### Build Requirements
+### Build Requirements
 
 * [ScalaJs.io v0.3.x](https://github.com/scalajs-io/scalajs.io)
 * [SBT v0.13.13](http://www.scala-sbt.org/download.html)
 
-#### Build/publish the SDK locally
+### Build/publish the SDK locally
 
 ```bash
  $ sbt clean publish-local
 ```
 
-#### Running the tests
+### Running the tests
 
 Before running the tests the first time, you must ensure the npm packages are installed:
 
@@ -45,7 +45,7 @@ Then you can run the tests:
 $ sbt test
 ```
 
-#### Examples
+### Examples
 
 ```scala
 import io.scalajs.nodejs.http.{Http, RequestOptions, ServerResponse}
@@ -75,7 +75,7 @@ Http.get(s"http://localhost:$port/", { response: ServerResponse =>
 })
 ```
 
-#### Artifacts and Resolvers
+### Artifacts and Resolvers
 
 To add the `Express` binding to your project, add the following to your build.sbt:  
 

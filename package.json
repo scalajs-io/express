@@ -1,5 +1,5 @@
 {
-  "name": "express-scalajs",
+  "name": "express-sjs",
   "version": "4.14.1",
   "private": true,
   "dependencies": {
