@@ -3,7 +3,7 @@ package io.scalajs.npm.express
 import io.scalajs.nodejs.Error
 import io.scalajs.nodejs.events.IEventEmitter
 import io.scalajs.nodejs.http.Server
-import io.scalajs.util.ScalaJsHelper._
+import io.scalajs.util.PromiseHelper._
 
 import scala.scalajs.js
 import scala.scalajs.js.|
@@ -199,19 +199,19 @@ object Application {
     /**
       * Binds and listens for connections on the specified host and port.
       */
-    def listenFuture(port: Int | String) = futureCallbackE1[Error, Server](app.listen(port, _))
+    def listenFuture(port: Int | String) = promiseWithError1[Error, Server](app.listen(port, _))
 
     /**
       * Binds and listens for connections on the specified host and port.
       */
     def listenFuture(port: Int | String, hostname: String) =
-      futureCallbackE1[Error, Server](app.listen(port, hostname, _))
+      promiseWithError1[Error, Server](app.listen(port, hostname, _))
 
     /**
       * Binds and listens for connections on the specified host and port.
       */
     def listenFuture(port: Int | String, hostname: String, backlog: Int) =
-      futureCallbackE1[Error, Server](app.listen(port, hostname, backlog, _))
+      promiseWithError1[Error, Server](app.listen(port, hostname, backlog, _))
 
   }
 
