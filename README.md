@@ -22,7 +22,6 @@ The following npm packages are related to Express:
 
 ### Build Requirements
 
-* [ScalaJs.io v0.3.x](https://github.com/scalajs-io/scalajs.io)
 * [SBT v0.13.13](http://www.scala-sbt.org/download.html)
 
 ### Build/publish the SDK locally
@@ -80,7 +79,7 @@ Http.get(s"http://localhost:$port/", { response: ServerResponse =>
 To add the `Express` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs" %%% "express" % "4.14.1"
+libraryDependencies += "io.scalajs" %%% "express" % "4.14.1-2"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:
