@@ -79,7 +79,7 @@ Http.get(s"http://localhost:$port/", { response: ServerResponse =>
 To add the `Express` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs" %%% "express" % "4.14.1-3"
+libraryDependencies += "io.scalajs" %%% "express" % "4.14.1-4"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:
