@@ -5,8 +5,8 @@ import sbt._
 
 import scala.language.postfixOps
 
-val apiVersion = "4.14.1-4"
-val scalaJsIOVersion = "0.3.0.8"
+val scalaJsIOVersion = "0.4.0-pre1"
+val apiVersion = scalaJsIOVersion
 val scalaJsVersion = "2.12.1"
 
 homepage := Some(url("https://github.com/scalajs.io/express"))
