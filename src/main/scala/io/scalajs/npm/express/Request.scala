@@ -1,8 +1,7 @@
 package io.scalajs.npm.express
 
+import io.scalajs.nodejs.http.ClientRequest
 import io.scalajs.npm.express
-import io.scalajs.nodejs.http.ClientRequest
-import io.scalajs.nodejs.http.ClientRequest
 
 import scala.scalajs.js
 
@@ -219,11 +218,19 @@ object Request {
     */
   implicit class HttpRequestExtensions(val request: Request) extends AnyVal {
 
-    def bodyAs[T <: js.Any] = request.body.asInstanceOf[T]
+    def bodyAs[T <: js.Any]: T = request.body.asInstanceOf[T]
 
-    def cookiesAs[T <: js.Any] = request.cookies.asInstanceOf[T]
+    def cookiesAs[T <: js.Any]: T = request.cookies.asInstanceOf[T]
 
     def queryAs[T <: js.Object]: T = request.query.asInstanceOf[T]
+
+    def getQuery(name: String): Option[Either[String, js.Array[String]]] = {
+      request.query.asInstanceOf[js.Dictionary[js.Any]].get(name) match {
+        case Some(value) if js.typeOf(value) == "string" => Some(Left(value.toString))
+        case Some(values: js.Array[String]) => Some(Right(values))
+        case None => None
+      }
+    }
 
   }
 
