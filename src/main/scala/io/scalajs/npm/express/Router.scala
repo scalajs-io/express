@@ -1,7 +1,7 @@
 package io.scalajs.npm.express
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.JSName
+import scala.scalajs.js.annotation.{JSGlobal, JSName}
 
 /**
   * A router object is an isolated instance of middleware and routes. You can think of it as a “mini-application,”
