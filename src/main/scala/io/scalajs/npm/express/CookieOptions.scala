@@ -1,7 +1,7 @@
 package io.scalajs.npm.express
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.ScalaJSDefined
+
 
 /**
   * Cookie Options
@@ -15,7 +15,6 @@ import scala.scalajs.js.annotation.ScalaJSDefined
   * @param signed   Indicates if the cookie should be signed.
   * @author lawrence.daniels@gmail.com
   */
-@ScalaJSDefined
 class CookieOptions(var domain: js.UndefOr[String] = js.undefined,
                     var encode: js.UndefOr[js.Function] = js.undefined,
                     var expires: js.UndefOr[js.Date] = js.undefined,

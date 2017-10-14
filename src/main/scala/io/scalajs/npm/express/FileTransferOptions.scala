@@ -1,7 +1,6 @@
 package io.scalajs.npm.express
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.ScalaJSDefined
 
 /**
   * File Transfer Options
@@ -13,7 +12,6 @@ import scala.scalajs.js.annotation.ScalaJSDefined
   * @param dotfiles     Option for serving dotfiles. Possible values are “allow”, “deny”, “ignore”.	“ignore”
   * @author lawrence.daniels@gmail.com
   */
-@ScalaJSDefined
 class FileTransferOptions(var maxAge: js.UndefOr[Int] = js.undefined,
                           var root: js.UndefOr[String] = js.undefined,
                           var lastModified: js.UndefOr[js.Date] = js.undefined,

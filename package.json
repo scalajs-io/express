@@ -1,6 +1,6 @@
 {
   "name": "express-sjs",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "private": true,
   "dependencies": {
     "express": "^4.14.1",

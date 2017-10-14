@@ -1,13 +1,12 @@
 package io.scalajs.npm.express
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.ScalaJSDefined
+
 
 /**
   * Static Options
   * @author lawrence.daniels@gmail.com
   */
-@ScalaJSDefined
 class StaticOptions(var dotfiles: js.UndefOr[String] = js.undefined,
                     var etag: js.UndefOr[Boolean] = js.undefined,
                     var extensions: js.UndefOr[Boolean] = js.undefined,
@@ -17,4 +16,4 @@ class StaticOptions(var dotfiles: js.UndefOr[String] = js.undefined,
                     var maxAge: js.UndefOr[Double] = js.undefined,
                     var redirect: js.UndefOr[Boolean] = js.undefined,
                     var setHeaders: js.UndefOr[js.Function] = js.undefined)
-    extends js.Object
+  extends js.Object
